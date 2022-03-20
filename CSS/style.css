@@ -124,6 +124,10 @@
     padding-right: 20px;
     padding-bottom: 8px;
 }
+.emailbnt:hover{
+    background-color: #0747A6;
+    
+}
 .emailbnt{
     border:0;
     background-color:#0061FF;
@@ -178,7 +182,7 @@
 }
 .row h3{
     font-size: 35px;
-    /* margin-bottom: 10px; */
+    
 }
 .row p{
     font-size: 17px;
@@ -300,15 +304,11 @@
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-evenly; */
     text-align: center;
     border-bottom:1px solid #F4F5F7;
 }
 .bitem{
     width: 220px;
-    
-    /* border: 1px solid red; */
-    /* margin-top: 10px; */
     padding: 10px;
     
 }
@@ -360,14 +360,7 @@
 }
 .boss{
     font-size: 17px;
-    /* margin-bottom: 30px; */
-    
-    
 }
-/* .footer{
-    background-color: #172B4D;
-} */
-
 .footertop{
     width: 1450px;
     margin: auto;
