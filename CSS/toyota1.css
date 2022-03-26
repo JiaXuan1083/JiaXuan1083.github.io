@@ -1,0 +1,148 @@
+
+
+.info-title span{
+    writing-mode: vertical-lr;
+    vertical-align: middle;
+    line-height: 1;
+    font-size: 120px;
+    font-weight: 300;
+
+}
+.info-content{
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 2;
+    
+}
+.info-content>h3{
+    font-size: 25px;
+    font-weight: bold;
+}
+.innovation-title{
+    color: #000;
+    padding: 20px 0;
+    width: 100%;
+}
+.innovation>h2{
+    color: #bb0404;
+    font-weight: bold;
+    font-size: 20px;
+}
+.innovation>h2::after{
+    content: '―――――――――――――――――――――――';
+}
+.innovation>h3{
+    background-color: #000;
+    color: #fff;
+    padding: 5px 15px;
+    
+}
+.innovation p{
+    margin: 10px 0;
+    line-height: 1.5;
+    
+}
+.innovation p::before{
+    content: '▪';
+    color: red;
+}
+.info-group{
+    width: 960px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 75px;
+}
+
+.info-title{
+    color: #fff;
+    background-color: #bb0404;
+    font-size: 40px;
+}
+/*right */
+.info-txt{
+    width: 350px;
+    position: absolute;
+    z-index: 5;
+    margin-top: -20px;
+    margin-left: -600px;
+    
+}
+
+.group-right .info-bg{
+    background-color: #eeeeee;
+    width: 430px;
+    height: 290px;
+    position: relative;
+    z-index: -1;
+    margin-right: -59%;
+    margin-bottom: -20%;
+
+
+}
+.group-right .innovation{
+    display: flex;
+    flex-direction: column;
+    background-color: #ddd;
+    align-items: flex-start;
+    width: 680px;
+    line-height: 1;
+    padding: 0 20px;
+    font-size: 16px;
+    position: relative;
+    margin-top: -3%;
+    margin-left: -18%;
+
+
+}
+.group-right img{
+    margin-left: 10%;
+}
+
+/* left */
+
+.group-left .info-title{
+    color: #fff;
+    background-color: #bb0404;
+    text-align: right;
+}
+.group-left .info-bg{
+    background-color: #eeeeee;
+    width: 518px;
+    height: 413px;
+    position: relative;
+    z-index: -1;
+    margin-left: 10%;
+    margin-bottom: -35%;
+    bottom: -35px;
+}
+.group-left .info-txt{
+    width: 350px;
+    position: absolute;
+    margin-left: 610px;
+    z-index: 5;
+    margin-top: -43px;
+}
+.group-left .innovation{
+    display: flex;
+    flex-direction: column;
+    background-color: #ddd;
+    align-items: flex-start;
+    width: 682px;
+    line-height: 1;
+    padding: 0 20px;
+    font-size: 16px;
+    position: relative;
+    margin-top: -3%;
+    margin-left: 29%;
+
+}
+.group-left img{
+    margin-left: -20%;
+    
+}
