@@ -65,6 +65,9 @@
     font-size: 40px;
 }
 /*right */
+.group-right{
+    margin-top: 40px;
+}
 .info-txt{
     width: 350px;
     position: absolute;
