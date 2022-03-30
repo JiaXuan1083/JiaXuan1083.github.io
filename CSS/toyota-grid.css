@@ -29,7 +29,7 @@
     font-size: 20px;
 }
 .innovation>h2::after{
-    content: '―――――――――――――――――――――――';
+    content: ' ———————————————————————';
 }
 .innovation>h3{
     background-color: #000;
