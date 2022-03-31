@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table-group{
+            width: 960px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            
+        }
+        .group{
+            width: 956px;
+            text-align: center;
+            border: 1px solid #ccc;
+            
+        }
+        img{
+            
+            width: 30%;
+            border-radius: 50px;
+            
+        }
+        .star{
+            width: 300px;
+            height: 300px;
+        }
+        .group-info{
+            text-align: left;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="table-group">
+        <div class="group">
+            <div class="img-me">
+                <img id="jiaxuan1" src="" alt="">
+            </div>
+            <div class="group-info">
+                <h2>姓名:</h2>
+                <p></p>
+                <h2>Email:</h2>
+                <p></p>
+                <h2>學校:</h2>
+                <p></p>
+                <h2>興趣:</h2>
+                <p></p>
+                
+            </div>
+            <div class="stargroup">
+                <img class="star" src="" >
+                <img class="star" src="" >
+                <img class="star" src="" >
+            </div>
+        </div>
+        
+    </div>
+    <script>
+
+        let p = document.querySelectorAll("p");
+        let content = ["李家萱", "kitty881215@gmail.com", "中華大學", "耍廢, 衝浪, 彈吉他"];
+        let myimg = document.getElementById("jiaxuan1")
+        let stargroup = document.querySelectorAll(".stargroup img")
+        
+        
+        const myimgUrl ="https://raw.githubusercontent.com/JiaXuan1083/FileStorage/main/IMG_7403.JPG"
+        
+        myimg.src = myimgUrl;
+        content.forEach((info, index) => {p[index].innerText = content[index]});
+        
+        const starArray =[
+            "https://raw.githubusercontent.com/JiaXuan1083/FileStorage/main/162069764828607_P10412423.jpg",
+            "https://raw.githubusercontent.com/JiaXuan1083/FileStorage/main/d3030672.jpg",
+            "https://raw.githubusercontent.com/JiaXuan1083/FileStorage/main/d73e09cd7a784526bffcd53519e58211.jpg",
+        ];
+        
+        starArray.forEach((t, index)=>{stargroup[index].setAttribute("src", starArray[index])})
+        
+
+    </script>
+</body>
+</html>
