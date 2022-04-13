@@ -68,6 +68,8 @@
     display: none;
     right: 0;
     box-sizing: border-box;
+    overflow: scroll;
+    height: 100vh;
     
     
     
@@ -819,7 +821,7 @@ li span{
         height: auto;
         padding: 0;
         justify-content: space-between;
-        
+        overflow: unset;
         
     }
     .header-nav nav{
