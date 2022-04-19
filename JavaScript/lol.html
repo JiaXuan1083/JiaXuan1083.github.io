@@ -2162,73 +2162,104 @@
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
         crossorigin="anonymous"></script>
 
-    <script>
+        <script>
 
-        let heroArray = [];
-        let container;
-        let btnCreateHeroArray, btnListHero, btnTableHero;
-
-        window.onload = function () {
-            container =  document.querySelector("#container");
-            btnCreateHeroArray = document.getElementById("createhero");
-            btnListHero = document.getElementById("listhero");
-            btnTableHero = document.getElementById("tablehero");
-
-            btnCreateHeroArray.addEventListener("click", function () {
-                //alert("從DOM建立英雄人物陣列資料後清除container");
-                
-                alert("從DOM建立英雄人物陣列資料成功！");
-                
-                //1.從DOM建立英雄人物資料
-                
-                let herogroup = container.querySelectorAll(".card");
-                herogroup.forEach((item, index)=>{
-                    let number = index + 1;
-                    let id = item.querySelector(".card-title").innerText;
-                    let text = item.querySelector(".card-text").innerText;
-                    let url = item.querySelector(".card-img-top").src;
-                    let hero = {
-                        "index":number,
-                        "id":id,
-                        "text":text,
-                        "url":url
-                    }
-                    heroArray.push(hero);
-                    console.log(number, id, text, url);
+            let heroArray = [];
+            let container;
+            let btnCreateHeroArray, btnListHero, btnTableHero;
+    
+            //table
+            let table = document.createElement("table");
+            let thead = document.createElement("thead");
+            let tbody = document.createElement("tbody");
+            let tbtitle = ['角色名稱', '英雄故事', '英雄網址'];
+            
+            table.setAttribute("class", "table table-bordered table-striped table-info");
+    
+            window.onload = function () {
+                container =  document.querySelector("#container");
+                btnCreateHeroArray = document.getElementById("createhero");
+                btnListHero = document.getElementById("listhero");
+                btnTableHero = document.getElementById("tablehero");
+    
+                btnCreateHeroArray.addEventListener("click", function () {
+                    //alert("從DOM建立英雄人物陣列資料後清除container");
+                    
+                    alert("從DOM建立英雄人物陣列資料成功！");
+                    
+                    //1.從DOM建立英雄人物資料
+                    
+                    let herogroup = container.querySelectorAll(".card");
+                    herogroup.forEach((item, index)=>{
+                        let number = index + 1;
+                        let id = item.querySelector(".card-title").innerText;
+                        let text = item.querySelector(".card-text").innerText;
+                        let url = item.querySelector(".card-img-top").src;
+                        let hero = {
+                            "index":number,
+                            "id":id,
+                            "text":text,
+                            "url":url
+                        }
+                        heroArray.push(hero);
+                        console.log(number, id, text, url);
+                    });
+    
+                    
+    
+                    //2.清除container
+                    document.querySelector("#container").innerHTML = "";
                 });
-
-                
-
-                //2.清除container
-                document.querySelector("#container").innerHTML = "";
-            });
-
-            btnListHero.addEventListener("click", function () {
-                if(heroArray.length==0){
-                    alert("請先建立陣列資料");
-                    return;
-                }
-                //alert("以文字迭代英雄人物資料！");
-                heroArray.forEach((hero, index)=>{
-                    let p1 = document.createElement("p")
-                    p1.innerText = JSON.stringify(hero);
-                    document.body.appendChild(p1)
-                })
-                
-                
-            });
-
-            btnTableHero.addEventListener("click", function(){
-                if(heroArray.length==0){
-                    alert("請先建立陣列資料");
-                    return;
-                }
-                
-                alert("以表格呈現英雄人物資料！");
-            });
-        }
-
-    </script>
+    
+                btnListHero.addEventListener("click", function () {
+                    if(heroArray.length==0){
+                        alert("請先建立陣列資料");
+                        return;
+                    }
+                    //alert("以文字迭代英雄人物資料！");
+                    heroArray.forEach((hero, index)=>{
+                        let p1 = document.createElement("p")
+                        p1.innerText = JSON.stringify(hero);
+                        document.body.appendChild(p1)
+                    })
+                    
+                    
+                });
+    
+                btnTableHero.addEventListener("click", function(){
+                    if(heroArray.length==0){
+                        alert("請先建立陣列資料");
+                        return;
+                    }
+                    
+                    alert("以表格呈現英雄人物資料！");
+                    container.innerText=''
+                    let theadTR = document.createElement("tr");
+                    
+                    tbtitle.forEach(title =>{
+                        let theadTH = document.createElement("th");
+                        theadTH.innerText = title;
+                        theadTR.append(theadTH);
+                    })
+                    thead.append(theadTR);
+                    table.append(thead);
+                    heroArray.forEach(info=>{
+                        let tbodyTR = document.createElement("tr");
+                        let title = document.createElement('td');
+                        title.innerText = info.id;
+                        let name = document.createElement('td');
+                        name.innerText = info.text;
+                        let url = document.createElement("td");
+                        url.innerText = info.url;
+                        tbodyTR.append(title,name,url);
+                        tbody.append(tbodyTR);
+                        table.append(tbody);
+                        container.append(table);
+                    })
+                });
+            }
+    
+        </script>
 
 
 
