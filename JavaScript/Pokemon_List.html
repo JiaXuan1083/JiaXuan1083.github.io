@@ -57,6 +57,8 @@
 
 
         function allPokemon(){
+            container.innerHTML = " ";
+            i = 1;
             for(let i=1; i<898; i++){
                 //若字串不為三位數前方補0
                 let fileName=i.toString().padStart(3,"0");
