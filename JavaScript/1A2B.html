@@ -38,13 +38,15 @@
             let ulans =document.querySelector(".ans-list");
             let btnstart = document.querySelector(".btn-start")
             let num =[];
-            
+            let compate = 0;
+            let repeat = true;
+            let inputNum;
             //猜數字按鈕
             document.querySelector(".btn-input").addEventListener("click", function(){
                 guessNum();
             })
             function guessNum(){
-                let inputNum = document.querySelector("#input_box").value;
+                inputNum = document.querySelector("#input_box").value;
                 let numArray = [];
                 for(let item of inputNum)
                 {
@@ -57,14 +59,32 @@
                     alert('遊戲還沒開始 請先按開始遊戲')
                     return;
                 }
-                let repert = /^(?!\d*?(\d)\d*?\1)\d{4}$/;
-                if(!repert.test(inputNum)){
-                    alert('請輸入四個不重複數字')
-                    return;
+                else{
+                    noRepeat();
+                }
+                // let repert = /^(?!\d*?(\d)\d*?\1)\d{4}$/;
+                // if(!repert.test(inputNum)){
+                //     alert('請輸入四個不重複數字')
+                //     return;
+                // }
+                function noRepeat(){
+                    compate = Array.from(inputNum)
+                    for(let i = 0; i < compate.length; i++){
+                        if(compate.indexOf(compate[i]) != compate.lastIndexOf(compate[i])){
+                            repeat = false;
+                            return alert("請勿輸入重複數字")
+                        }
+                        else{
+                            repeat = true;
+                        }
+                    }
                 }
 
                 //計算幾a幾b
+                //filter()回傳符合條件的元素，得到一個新陣列
+                //intersect 在陣列中尋找指定元素
                 let intersect = num.filter((value) => inputNum.includes(value));
+                //indexof 對比陣列中的物件，是否有相同
                 let a = intersect.filter((x) => num.indexOf(x) == numArray.indexOf(x)).length;
                 let b = intersect.length - a;
                 lians.setAttribute("Class", "ans-list" );
