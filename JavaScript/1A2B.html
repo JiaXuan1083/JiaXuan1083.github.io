@@ -62,11 +62,7 @@
                 else{
                     noRepeat();
                 }
-                // let repert = /^(?!\d*?(\d)\d*?\1)\d{4}$/;
-                // if(!repert.test(inputNum)){
-                //     alert('請輸入四個不重複數字')
-                //     return;
-                // }
+                //檢查重複數字
                 function noRepeat(){
                     compate = Array.from(inputNum)
                     for(let i = 0; i < compate.length; i++){
